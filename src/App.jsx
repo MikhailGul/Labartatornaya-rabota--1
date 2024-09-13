@@ -1,10 +1,23 @@
 import './App.css'
 
-function App() {
-  const obj = { name: "john", surname: "smit" };
-  
-  return  <p>name: <span>{obj.name}</span> <br></br> surname: <span>{obj.surname}</span></p>
+
+  function App(){
+    const users = [
+      {name : "user1", surn: "surn1", age: 30 },
+      {name : "user2", surn: "surn2", age: 31 },
+      {name : "user3", surn: "surn3", age: 32 },
+    ];
+
+    return (
+      <>
+      <ul>
+        {users.map((user, index) => (
+          <li key ={index}> 
+          {user.name} {user.surn} (Age: {user.age})
+          </li>
+        ))}
+      </ul>
+      </>
+    )
   }
-
-
 export default App;
